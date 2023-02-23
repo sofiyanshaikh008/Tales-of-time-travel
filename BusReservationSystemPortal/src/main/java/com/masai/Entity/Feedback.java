@@ -30,5 +30,5 @@ public class Feedback {
 	private User user;
 	
 	@OneToOne
-	private Reservation reservation;
+	private Bus bus;
 }

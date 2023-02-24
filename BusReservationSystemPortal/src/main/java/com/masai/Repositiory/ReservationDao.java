@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.masai.Entity.Reservation;
 
 @Repository
-public interface ReservationRepo extends JpaRepository<Reservation, Integer>{
+public interface ReservationDao extends JpaRepository<Reservation, Integer> {
 
 }

@@ -1,4 +1,4 @@
-package com.masai.service;
+package com.masai.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.Entity.CurrentUserSession;
+import com.masai.Entity.LoginDTO;
 import com.masai.Entity.User;
 import com.masai.Exception.LoginException;
 import com.masai.Repositiory.SessionRepo;
 import com.masai.Repositiory.UserRepo;
-import com.masai.Entity.LoginDTO;
 
 import net.bytebuddy.utility.RandomString;
 

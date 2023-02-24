@@ -1,5 +1,12 @@
 package com.masai.Entity;
 
-public class LoginDTO {
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 
+@Data
+public class LoginDTO {
+	@NotNull(message ="Username cannot be null.")
+	private String userName;
+	@NotNull(message ="Password cannot be null.")
+	private String password;
 }

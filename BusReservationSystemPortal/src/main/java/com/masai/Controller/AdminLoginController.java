@@ -16,7 +16,7 @@ import com.masai.Service.UserServiceImpl;
 
 @RestController
 @RequestMapping("/login")
-public class LoginController {
+public class AdminLoginController {
 	
 	@Autowired
 	UserServiceImpl userSer;

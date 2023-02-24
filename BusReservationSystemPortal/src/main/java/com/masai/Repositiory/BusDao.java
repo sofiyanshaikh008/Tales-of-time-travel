@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.masai.Entity.Bus;
 
 @Repository
-public interface BusRepo extends JpaRepository<Bus, Integer> {
+public interface BusDao extends JpaRepository<Bus, Integer> {
 
 }

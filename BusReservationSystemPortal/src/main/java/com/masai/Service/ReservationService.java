@@ -3,7 +3,7 @@ package com.masai.Service;
 import java.time.LocalDate;
 import java.util.List;
 import com.masai.Entity.Reservation;
-import com.masai.Exception.BusNotFoundException;
+import com.masai.Exception.BusException;
 import com.masai.Exception.ReservationException;
 import com.masai.Exception.UserException;
 

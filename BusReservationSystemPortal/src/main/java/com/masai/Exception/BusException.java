@@ -1,13 +1,13 @@
 package com.masai.Exception;
 
-public class BusNotFoundException extends Exception {
+public class BusException extends Exception {
 
-	public BusNotFoundException() {
+	public BusException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public BusNotFoundException(String message) {
+	public BusException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}

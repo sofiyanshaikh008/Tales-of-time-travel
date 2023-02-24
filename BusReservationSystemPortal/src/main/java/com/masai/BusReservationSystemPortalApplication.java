@@ -8,6 +8,7 @@ public class BusReservationSystemPortalApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BusReservationSystemPortalApplication.class, args);
+		
 	}
 
 }

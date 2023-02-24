@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.masai.Entity.Reservation;
+import com.masai.exception.ReservationException;
 
 public interface ReservationService {
 
@@ -17,7 +18,7 @@ public interface ReservationService {
    
    public List<Reservation> viewAllReservation(String key) throws ReservationException,UserException;
    
-   public List<Reservation> getAllReservationByData(LocalDate data,String key) throws ReservationException,userException;
+   public List<Reservation> getAllReservationByDate(LocalDate date,String key) throws ReservationException,userException;
    
 }
 

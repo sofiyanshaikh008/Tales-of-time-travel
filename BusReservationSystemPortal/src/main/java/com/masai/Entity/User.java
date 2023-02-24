@@ -1,17 +1,13 @@
 package com.masai.Entity;
 
-import java.util.Collection;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
 
@@ -38,6 +34,4 @@ public class User {
 	@OneToOne
 	private Reservation reservation;
 	
-	@OneToMany(fetch = FetchType.EAGER)
-	private Collection<Role> roles;
 }

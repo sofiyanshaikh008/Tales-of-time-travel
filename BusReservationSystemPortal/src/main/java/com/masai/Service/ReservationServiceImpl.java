@@ -2,6 +2,7 @@ package com.masai.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +21,7 @@ import com.masai.Repositiory.UserRepo;
 public class ReservationServiceImpl implements ReservationService{
 
 	@Autowired
-	private ReservationDao rDao;
+	private Reservation rDao;
 
 	@Autowired
 	private BusDao bdao;
@@ -142,23 +143,130 @@ public class ReservationServiceImpl implements ReservationService{
 
 
 	@Override
-	public Reservation viewReservationById(Integer reservationId, String key)
-			throws ReservationException, UserException {
-		// TODO Auto-generated method stub
-		return null;
+	public Reservation viewReservationById(Integer reservationId, String key) throws ReservationException, UserException {
+		
+		
+		CurrentUserSession loggedInUser=srepo.findByUuid(key);
+		if(loggedInUser==null) {
+			throw new UserException("Please provide a valid key to add reservation");
+		}
+		
+		
+		Optional<Reservation> opt = rDao.findById(reservationId);
+		
+		if(opt.isPresent()) {
+			
+			
+			if (loggedInUser.getType().equalsIgnoreCase("Admin")) {
+				
+				Reservation reservation = opt.get();
+				
+				return reservation;
+			}
+			else {
+				User u=uRepo.findById(loggedInUser.getUserId())
+						.orElseThrow(()-> new UserException("User with User Id "+loggedInUser.getUserId()+" does not exist"));
+				if(u.getUserLoginId()==loggedInUser.getUserId()) {
+					Reservation reservation = opt.get();
+					
+					return reservation;
+				}
+				else {
+					throw new UserException("Invalid User details, please login first");
+				}
+			}
+			
+			
+			
+			
+		}
+		else {
+			
+			throw new ReservationException("Reservation is not present with this Reservation ID :" + reservationId);
+			
+		}
 	}
+
 
 	@Override
 	public List<Reservation> viewAllReservation(String key) throws ReservationException, UserException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		CurrentUserSession loggedInUser=srepo.findByUuid(key);
+		if(loggedInUser==null) {
+			throw new UserException("Please provide a valid key to add reservation");
+		}
+		if (loggedInUser.getType().equalsIgnoreCase("Admin")) {
+			
+			List<Reservation> reservation = rDao.findAll();
+			
+			
+			if(reservation.size() != 0) {
+				
+				return reservation;
+			}
+			else {
+				throw new ReservationException("Reservation not found");
+			}
+		}
+		else throw new ReservationException("Access Denied");
+		
+		
+		
+		
 	}
 
+
 	@Override
-	public List<Reservation> getAllReservationByDate(LocalDate date, String key)
-			throws ReservationException, UserException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Reservation> getAllReservationByDate(LocalDate date, String key) throws ReservationException, UserException {
+		
+		CurrentUserSession loggedInUser=srepo.findByUuid(key);
+		if(loggedInUser==null) {
+			throw new UserException("Please provide a valid key to add reservation");
+		}
+		if (loggedInUser.getType().equalsIgnoreCase("Admin")) {
+			
+			List<Reservation> reservation = rDao.findAll();
+			
+			List<Reservation> reservationByDate = new ArrayList<>();
+			
+			if(reservation.size() != 0) {
+				
+				
+				for(Reservation s : reservation) {
+					
+					
+					if(date.isEqual(s.getReservationDate())) {
+		
+						reservationByDate.add(s);
+					}
+			
+				}
+				
+				
+				if(reservationByDate.size() != 0) {
+					
+					return reservationByDate;
+				}
+				else {
+					throw new ReservationException("No Reservation is available on this Date...");
+				}
+				
+			}
+			else {
+				throw new ReservationException("No Reservation is available...!");
+			}
+			
+		}
+		else throw new ReservationException("Access Denied");
+		
+		
+		
+		
+		
+
 	}
+
+
+	
 
 }

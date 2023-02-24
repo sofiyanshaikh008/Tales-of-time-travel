@@ -12,9 +12,9 @@ import com.masai.Entity.Bus;
 import com.masai.Entity.CurrentUserSession;
 import com.masai.Entity.Reservation;
 import com.masai.Entity.User;
+import com.masai.Exception.BusException;
 import com.masai.Exception.ReservationException;
 import com.masai.Exception.UserException;
-import com.masai.Repositiory.ReservationDao;
 import com.masai.Repositiory.SessionRepo;
 import com.masai.Repositiory.UserRepo;
 

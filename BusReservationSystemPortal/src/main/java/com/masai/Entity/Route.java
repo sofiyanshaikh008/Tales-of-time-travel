@@ -2,16 +2,18 @@ package com.masai.Entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.Data;
 
 @Entity
-@Data
 public class Route {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer routeId;
@@ -22,6 +24,91 @@ public class Route {
 	
 	private Integer distance;
 	
-	@OneToMany
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "route")
 	private List<Bus> buslist;
+
+
+
+//	public Route(Integer routeId, String routeFrom, String routeTo, Integer distance, List<Bus> buslist) {
+//		super();
+//		this.routeId = routeId;
+//		this.routeFrom = routeFrom;
+//		this.routeTo = routeTo;
+//		this.distance = distance;
+//		this.buslist = buslist;
+//	}
+
+	public Route(Integer routeId, String routeFrom, String routeTo, Integer distance, List<Bus> buslist) {
+		super();
+		this.routeId = routeId;
+		this.routeFrom = routeFrom;
+		this.routeTo = routeTo;
+		this.distance = distance;
+		this.buslist = buslist;
+	}
+
+
+
+	public Route() {
+		super();
+	}
+
+
+	public Integer getRouteId() {
+		return routeId;
+	}
+
+
+	public void setRouteId(Integer routeId) {
+		this.routeId = routeId;
+	}
+
+
+	public String getRouteFrom() {
+		return routeFrom;
+	}
+
+
+	public void setRouteFrom(String routeFrom) {
+		this.routeFrom = routeFrom;
+	}
+
+
+	public String getRouteTo() {
+		return routeTo;
+	}
+
+
+	public void setRouteTo(String routeTo) {
+		this.routeTo = routeTo;
+	}
+
+
+	public Integer getDistance() {
+		return distance;
+	}
+
+
+	public void setDistance(Integer distance) {
+		this.distance = distance;
+	}
+
+
+	public List<Bus> getBuslist() {
+		return buslist;
+	}
+
+
+	public void setBuslist(List<Bus> buslist) {
+		this.buslist = buslist;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Route [routeId=" + routeId + ", routeFrom=" + routeFrom + ", routeTo=" + routeTo + ", distance="
+				+ distance + "]";
+	}
+	
 }

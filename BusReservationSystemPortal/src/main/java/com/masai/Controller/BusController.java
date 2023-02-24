@@ -12,7 +12,7 @@ import com.masai.Service.UserServiceImpl;
 
 @RestController
 @RequestMapping("/signIn")
-public class SignupController {
+public class BusController {
 	
 	@Autowired
 	UserServiceImpl userSer;

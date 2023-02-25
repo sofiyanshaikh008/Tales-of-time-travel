@@ -28,11 +28,6 @@ public class AdminLoginController {
 		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
 	}
 	
-	@GetMapping("/hello")
-	public String sayHello() {
-		return "Hello user";
-	}
-	
 	@PostMapping("/logout")
 	public ResponseEntity<String> adminLogoutHandler(@RequestParam String key) throws LoginException{
 		String msg=lService.logOutFromAccount(key);

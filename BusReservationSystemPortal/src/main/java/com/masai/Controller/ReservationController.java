@@ -1,7 +1,9 @@
-package com.masai.Controller;
+package com.masai.controller;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,14 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.masai.Entity.Reservation;
-import com.masai.Exception.ReservationException;
-import com.masai.Exception.UserException;
-import com.masai.Service.ReservationService;
-import com.masai.Exception.BusException;
+import com.masai.exception.BusException;
+import com.masai.exception.ReservationException;
+import com.masai.exception.UserException;
+import com.masai.model.Reservation;
+import com.masai.service.ReservationService;
 
-import jakarta.validation.Valid;
-
+//import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/reservation")

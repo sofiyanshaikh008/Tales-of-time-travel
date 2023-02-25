@@ -1,11 +1,12 @@
-package com.masai.Service;
+package com.masai.service;
 
 import java.time.LocalDate;
 import java.util.List;
-import com.masai.Entity.Reservation;
-import com.masai.Exception.BusException;
-import com.masai.Exception.ReservationException;
-import com.masai.Exception.UserException;
+
+import com.masai.exception.BusException;
+import com.masai.exception.ReservationException;
+import com.masai.exception.UserException;
+import com.masai.model.Reservation;
 
 public interface ReservationService {
 
@@ -23,8 +24,3 @@ public interface ReservationService {
 	public List<Reservation> getAllReservationByDate(LocalDate date,String key)throws ReservationException, UserException;
 	
 }
-
-
-
-
-

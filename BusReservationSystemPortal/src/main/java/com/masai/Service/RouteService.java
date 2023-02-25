@@ -1,10 +1,10 @@
-package com.masai.Service;
+package com.masai.service;
 
 import java.util.List;
 
-import com.masai.Entity.Route;
-import com.masai.Exception.RouteException;
-import com.masai.Exception.UserException;
+import com.masai.exception.RouteException;
+import com.masai.exception.UserException;
+import com.masai.model.Route;
 
 public interface RouteService {
 

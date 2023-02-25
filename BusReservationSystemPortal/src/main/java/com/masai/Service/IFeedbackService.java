@@ -1,11 +1,11 @@
-package com.masai.Service;
+package com.masai.service;
 
 import java.util.List;
 
-import com.masai.Exception.BusException;
-import com.masai.Exception.FeedbackException;
-import com.masai.Exception.UserException;
-import com.masai.Entity.Feedback;
+import com.masai.exception.BusException;
+import com.masai.exception.FeedbackException;
+import com.masai.exception.UserException;
+import com.masai.model.Feedback;
 
 public interface IFeedbackService {
 

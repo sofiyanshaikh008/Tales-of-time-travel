@@ -1,6 +1,8 @@
-package com.masai.Controller;
+package com.masai.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,13 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.masai.Entity.Feedback;
-import com.masai.Exception.BusException;
-import com.masai.Exception.FeedbackException;
-import com.masai.Exception.UserException;
-import com.masai.Service.IFeedbackServiceImpl;
-
-import jakarta.validation.Valid;
+import com.masai.exception.BusException;
+import com.masai.exception.FeedbackException;
+import com.masai.exception.UserException;
+import com.masai.model.Feedback;
+import com.masai.service.IFeedbackServiceImpl;
 
 @RestController
 @RequestMapping("/feedback")

@@ -1,27 +1,36 @@
-package com.masai.Service;
+package com.masai.service;
 
+import java.lang.StackWalker.Option;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.masai.Entity.Bus;
-import com.masai.Entity.CurrentUserSession;
-import com.masai.Entity.Reservation;
-import com.masai.Entity.User;
-import com.masai.Exception.BusException;
-import com.masai.Exception.ReservationException;
-import com.masai.Exception.UserException;
-import com.masai.Repositiory.SessionRepo;
-import com.masai.Repositiory.UserRepo;
+import com.masai.exception.BusException;
+import com.masai.exception.ReservationException;
+import com.masai.exception.UserException;
+import com.masai.model.Bus;
+import com.masai.model.CurrentUserSession;
+import com.masai.model.Reservation;
+import com.masai.model.User;
+import com.masai.repository.BusDao;
+import com.masai.repository.ReservationDao;
+import com.masai.repository.SessionRepo;
+import com.masai.repository.UserRepo;
 
-public class ReservationServiceImpl implements ReservationService{
+@Service
+public class ReservationServiceImpl implements ReservationService {
 
 	@Autowired
-	private Reservation rDao;
+	private ReservationDao rDao;
 
 	@Autowired
 	private BusDao bdao;
@@ -268,5 +277,5 @@ public class ReservationServiceImpl implements ReservationService{
 
 
 	
-
+	
 }

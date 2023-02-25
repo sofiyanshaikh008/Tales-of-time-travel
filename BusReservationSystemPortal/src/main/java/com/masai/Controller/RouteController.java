@@ -1,6 +1,4 @@
-package com.masai.Controller;
-
-
+package com.masai.controller;
 
 
 import java.util.List;
@@ -18,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.masai.Entity.Route;
-import com.masai.Exception.RouteException;
-import com.masai.Exception.UserException;
-import com.masai.Service.RouteServiceImpl;
+import com.masai.exception.RouteException;
+import com.masai.exception.UserException;
+import com.masai.model.Route;
+import com.masai.service.RouteServiceImpl;
 
 @RestController
 @RequestMapping("/route")

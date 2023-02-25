@@ -1,4 +1,4 @@
-package com.masai.Exception;
+package com.masai.exception;
 
 public class RouteException extends Exception {
 

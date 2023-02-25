@@ -1,21 +1,21 @@
-package com.masai.Service;
+package com.masai.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.masai.Entity.Bus;
-import com.masai.Entity.CurrentUserSession;
-import com.masai.Entity.Feedback;
-import com.masai.Entity.User;
-import com.masai.Exception.BusException;
-import com.masai.Exception.FeedbackException;
-import com.masai.Exception.UserException;
-import com.masai.Repositiory.BusDao;
-import com.masai.Repositiory.FeedbackDao;
-import com.masai.Repositiory.SessionRepo;
-import com.masai.Repositiory.UserRepo;
+import com.masai.exception.BusException;
+import com.masai.exception.FeedbackException;
+import com.masai.exception.UserException;
+import com.masai.model.Bus;
+import com.masai.model.CurrentUserSession;
+import com.masai.model.Feedback;
+import com.masai.model.User;
+import com.masai.repository.BusDao;
+import com.masai.repository.FeedbackDao;
+import com.masai.repository.SessionRepo;
+import com.masai.repository.UserRepo;
 
 @Service
 public class IFeedbackServiceImpl implements IFeedbackService{
@@ -107,5 +107,7 @@ public class IFeedbackServiceImpl implements IFeedbackService{
 		
 	}
 
+	
+	
 	
 }

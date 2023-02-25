@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;BusTicketReservationSystem&apos;" deleteContents="false" description="Delete resource &apos;BusTicketReservationSystem&apos;" element1="/BusTicketReservationSystem" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1677332335862"/>&#x0A;<refactoring comment="Delete resource &apos;Masai-Travels-RESTful-API-main&apos;" deleteContents="false" description="Delete resource &apos;Masai-Travels-RESTful-API-main&apos;" element1="/Masai-Travels-RESTful-API-main" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1677332339732"/>
-</session>

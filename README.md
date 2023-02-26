@@ -41,3 +41,5 @@ Following ER diagram indicates the database tables and thier interaction which w
     * Registering themselves with application, and logging in to get the valid session token.
     * Viewing list of available bus and booking a reservatioon.
     * Only logged in users can update his/her reservation, profile updation and other features.
+
+<h1 align="center">THANK YOU</h1>

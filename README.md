@@ -27,7 +27,7 @@ This is a collaborative project built by a team of 5 members executed in 5 days.
 
 ## ER Diagram
 Following ER diagram indicates the database tables and thier interaction which we are using.
-![table-relationship](https://user-images.githubusercontent.com/105231493/221410769-4d3d2e3d-ed0c-4191-ae7b-06698320f15a.png)
+![table_relationship](https://user-images.githubusercontent.com/105231493/221415308-38211774-22db-4bac-9d98-9338a851a499.png)
 
 
 ## Features

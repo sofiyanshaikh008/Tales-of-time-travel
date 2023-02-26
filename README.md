@@ -24,3 +24,20 @@ This is a collaborative project built by a team of 5 members executed in 5 days.
 - Bus Module
 - Reservation Module
 - Feedback Module
+
+## ER Diagram
+Following ER diagram indicates the database tables and thier interaction which we are using.
+![table-relationship](https://user-images.githubusercontent.com/105231493/221410769-4d3d2e3d-ed0c-4191-ae7b-06698320f15a.png)
+
+
+## Features
+
+* User and Admin authentication & validation with session uuid having.
+* Admin Features:
+    * Administrator Role of the entire application
+    * Only registered admins with valid session token can add/update/delete route or customer from main database
+    * Admin can access the details of different users, buses and routes.
+* User Features:
+    * Registering themselves with application, and logging in to get the valid session token.
+    * Viewing list of available bus and booking a reservatioon.
+    * Only logged in users can update his/her reservation, profile updation and other features.

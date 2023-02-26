@@ -1,6 +1,5 @@
 package com.masai.Service;
 
-import com.masai.Entity.LoginDTO;
 import com.masai.Exception.LoginException;
 
 public interface LoginService {

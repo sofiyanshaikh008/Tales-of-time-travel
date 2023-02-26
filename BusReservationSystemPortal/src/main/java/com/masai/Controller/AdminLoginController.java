@@ -1,46 +1,32 @@
-package com.masai.Controller;
+import javax.security.auth.login.LoginException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.masai.Entity.Admin;
-import com.masai.Entity.User;
-import com.masai.Exception.UserException;
-import com.masai.Service.AdminServiceImpl;
-import com.masai.Service.UserServiceImpl;
+
+import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/admin")
 public class AdminLoginController {
 	
 	@Autowired
-	UserServiceImpl userSer;
+	private AdminLoginService lService;
 	
-	@Autowired
-	AdminServiceImpl adminSer;
-	
-	@PreAuthorize("hasRole('ADMIN')")
-	@GetMapping("/admin")
-	public ResponseEntity<Admin> loginAdmin(@RequestBody Admin admin) throws UserException {
-		
-		Admin adm =  adminSer.getAdminByemail(admin);
-		
-		ResponseEntity<Admin> res = new ResponseEntity<>(adm, HttpStatus.ACCEPTED);		
-	
-		return res;
+	@PostMapping("/login")
+	public ResponseEntity<String> adminLoginHandler(@Valid @RequestBody AdminDto dto) throws LoginException{
+		String msg=lService.logIntoAccount(dto);
+		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
 	}
 	
-	@GetMapping("/user")
-	public ResponseEntity<User> loginUser(@RequestBody User user) throws UserException {
-		User usr =  userSer.getUserByemail(user);
-		
-		ResponseEntity<User> res = new ResponseEntity<>(usr, HttpStatus.ACCEPTED);		
-	
-		return res;
+	@PostMapping("/logout")
+	public ResponseEntity<String> adminLogoutHandler(@RequestParam String key) throws LoginException{
+		String msg=lService.logOutFromAccount(key);
+		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
 	}
 }

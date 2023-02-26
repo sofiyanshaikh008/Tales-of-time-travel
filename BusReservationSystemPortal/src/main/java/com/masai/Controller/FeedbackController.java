@@ -1,4 +1,4 @@
-package com.masai.Controller;
+package com.masai.controller;
 
 import java.util.List;
 
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.Entity.Feedback;
-import com.masai.Exception.BusException;
-import com.masai.Exception.FeedbackException;
 import com.masai.Exception.UserException;
-import com.masai.Service.IFeedbackServiceImpl;
+import com.masai.exception.BusException;
+import com.masai.exception.FeedbackException;
+import com.masai.service.IFeedbackServiceImpl;
 
 import jakarta.validation.Valid;
 

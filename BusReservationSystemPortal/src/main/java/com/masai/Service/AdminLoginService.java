@@ -1,9 +1,11 @@
 package com.masai.Service;
 
-import com.masai.Entity.Admin;
-import com.masai.Exception.UserException;
+import com.masai.Entity.AdminDto;
+import com.masai.Exception.LoginException;
+
+
 
 public interface AdminLoginService {
-	public Admin registerAdmin(Admin admin);
-	public Admin getAdminByemail(Admin admin) throws UserException ;
+	public String logIntoAccount(AdminDto dto) throws LoginException;
+	public String logOutFromAccount(String key) throws LoginException;
 }

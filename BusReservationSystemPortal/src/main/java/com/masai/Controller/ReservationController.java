@@ -1,4 +1,4 @@
-package com.masai.Controller;
+package com.masai.controller;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -21,10 +21,11 @@ import com.masai.Entity.Reservation;
 import com.masai.Exception.ReservationException;
 import com.masai.Exception.UserException;
 import com.masai.Service.ReservationService;
-import com.masai.Exception.BusException;
+import com.masai.exception.BusException;
 
 import jakarta.validation.Valid;
 
+//import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/reservation")

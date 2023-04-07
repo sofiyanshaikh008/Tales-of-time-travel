@@ -1,5 +1,7 @@
 <h1 align="center">TALES OF TIME TRAVEL</h1>
 
+![image](https://user-images.githubusercontent.com/112626182/229761434-55f82bac-ee46-4924-ac45-0e6c510fffc1.png)
+
 # Description
 This is a REST API for a Bus reservation system portal. This API performs all the fundamental CRUD operations of any Bus reservation platform with user and admin validation at every step.
 This is a collaborative project built by a team of 5 members executed in 5 days.
